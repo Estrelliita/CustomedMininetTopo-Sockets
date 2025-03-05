@@ -9,7 +9,7 @@
 #define PORT 8080  // Change this if your server uses a different port
 #define BUFFER_SIZE 1024
 
-int main(int argc, char const *argv[]){
+int main(int argc, char *argv[]){
   printf("main");
   if(argc != 2){
     printf("Usage: %s <server_ip>\n", argv[0]);
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]){
   int client_socket = 0;
   struct sockaddr_in server_address, client_address;
   socklen_t client_addrlen = sizeof(client_address);
-  const char *server_ip = argv[1]; //Get server IP from command-line
+  char *server_ip = argv[1]; //Get server IP from command-line
   char buffer[1024] = {0};
   char *hello = "hello from client";
 
